@@ -1,14 +1,20 @@
 export {};
 
-function add() {}
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
 
-function subtract() {}
+function subtract(num1: number, num2: number): number {
+  return num1 - num2;
+}
 
 function sum() {}
 
 function multiply() {}
 
-function power() {}
+function power(num1: number, num2: number):number {
+  return num1 ** num2;
+}
 
 console.log(add(1, 2)); // Expected output: 3
 console.log(subtract(1, 2)); // Expected output: -1

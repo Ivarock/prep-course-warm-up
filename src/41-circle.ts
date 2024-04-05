@@ -11,15 +11,36 @@ export {};
  *  - https://www.youtube.com/watch?v=YOlr79NaAtQ (What is THIS in JavaScript? in 100 seconds)
  */
 
-function Circle(radius) {
-  this.radius = radius;
-  this.area = function() {};
-  this.perimeter = function() {};
+// Define an interface describing the properties and methods of a circle object
+interface Circle {
+  radius: number;
+  area(): number;
+  perimeter(): number;
 }
 
-const c = new Circle(3);
+// Define the Circle function constructor, specifying that 'this' inside the function conforms to the Circle interface
+function Circle(this: Circle, radius: number) {
+  this.radius = radius;
+
+  // Define the area method for the circle object
+  this.area = function(this: Circle): number {
+    return Math.PI * (this.radius ** 2);
+  };
+
+  // Define the perimeter method for the circle object
+  this.perimeter = function(this: Circle): number {
+    return 2 * Math.PI * this.radius;
+  };
+}
+
+
+const c = new (Circle as any)(3);
 console.log("Area =", c.area()); // Expected output: Area = 28.27
 console.log("Perimeter =", c.perimeter()); // Expected output: Perimeter = 18.85
+
+
+
+
 
 
 /**

@@ -20,6 +20,8 @@ const books = [
   }
 ];
 
-const getTheTitles = () => {};
+const getTheTitles = (bookList: {title: string, author: string}[]): string[] => {
+  return bookList.map(book => book.title);
+};
 
 console.log(getTheTitles(books)); // Expected output: ['4 hour work week', 'Tools of Titans']

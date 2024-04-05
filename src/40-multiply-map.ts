@@ -8,9 +8,21 @@ export {};
  * and recreate the logic yourself.
  */
 
-const map = () => {};
-
+// Defining map with two arguments - the input array(arr), and callback function(callback)
+const map = (arr: number[], callback: (num: number) => number): number[] => {
+  // Create a empty array within map function to store mapped values
+  const mappedArray: number[] = [];
+  // Iterate over each element using a for loop
+  for (const num of arr) {
+    // .push() the result of callback function to new array
+    mappedArray.push(callback(num));
+  }
+  // Return new array containing mapped values
+  return mappedArray
+};
+// First argument of map function
 const numbers = [1, 2, 3];
+// Apply the callback function to array 'numbers' and store it in variable 'doubled'
 const doubled = map(numbers, function(number) {
   return number * 2;
 });

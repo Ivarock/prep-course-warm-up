@@ -18,7 +18,7 @@ interface Circle {
   perimeter(): number;
 }
 
-// Define the Circle function constructor, specifying that 'this' inside the function conforms to the Circle interface
+// Define the Circle function constructor
 function Circle(this: Circle, radius: number) {
   this.radius = radius;
 

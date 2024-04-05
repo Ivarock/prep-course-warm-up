@@ -8,9 +8,13 @@ function subtract(num1: number, num2: number): number {
   return num1 - num2;
 }
 
-function sum() {}
+function sum(nums: number[]): number {
+  return nums.reduce((acc: number, curr: number) => acc + curr, 0);
+}
 
-function multiply() {}
+function multiply(nums: number[]):number {
+  return nums.reduce((acc: number, curr: number) => acc * curr, 1);
+}
 
 function power(num1: number, num2: number):number {
   return num1 ** num2;
